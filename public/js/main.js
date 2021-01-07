@@ -8,6 +8,21 @@ $(function() {
     inicializaMarcadores();
     atualizarPlacar();
     $("#botao-reiniciar").click(reiniciaJogo);
+    $('#usuarios').selectize({
+        create: true,
+        sortField: 'text'
+    });
+    $(".tooltip").tooltipster({
+        trigger: "custom"
+    });
+    ///// REVER CODIGO ABAIXO
+    $(".toooltip").tooltipster({
+        animation: 'slide',
+        delay: 200,
+        theme: 'tooltipster-default',
+        touchDevices: false,
+        trigger: 'hover'
+    });
 });
 
 function atualizaTamanhoFrase() {

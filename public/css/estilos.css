@@ -43,6 +43,19 @@ html,body{
     text-align: center;
 }
 
+.select-usuarios{
+    display: inline-block;
+}
+
+
+.name{
+    display: block;
+}
+
+.selectize-input {
+    width: 150px;
+    vertical-align: middle;
+}
 
 .frase {
     font-size: 20px;

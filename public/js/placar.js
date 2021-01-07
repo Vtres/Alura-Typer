@@ -23,6 +23,13 @@ function sincronizarPlacar(){
 
     $.post("http://localhost:3000/placar",dados,function(){
         console.log("deu certo");
+        $(".tooltip").tooltipster("open");
+    }).fail(function(){
+        $(".tooltip").tooltipster("open").tooltipster("content", "Falha ao sincronizar"); 
+    }).always(function(){ 
+        setTimeout(function() {
+        $(".tooltip").tooltipster("close"); 
+    }, 1200);
     });
 }
 
@@ -30,16 +37,15 @@ function atualizarPlacar(){
     $.get("http://localhost:3000/placar",function(data){
         $(data).each(function(){
             var linha = novaLinha(this.usuario,this.pontos);
+            linha.find(".botao-remover").click(removeLinha);
             $("tbody").append(linha);
         });
-
-
-    });
+   });
 }
 
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody");
-    var usuario = "Douglas"
+    var usuario = $("#usuarios").val();
     var numPalavras = $("#contador-palavras").text();
 
     var linha = novaLinha(usuario, numPalavras);

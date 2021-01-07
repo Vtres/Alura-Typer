@@ -1,0 +1,26 @@
+.card{
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+#botao-jogue{
+	width: 150px;
+	display: block;
+	margin: 50px auto;
+}
+
+.slider {
+    height: auto;
+}
+.slick-next, .slick-arrow{
+	color: black;
+}
+.slick-prev:before{
+    color: black;
+}
+
+.slick-next:before{
+    color: black;
+}
